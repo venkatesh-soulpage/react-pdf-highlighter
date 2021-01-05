@@ -1,0 +1,118 @@
+/*  imported from AreaHighlight.module.css  */
+
+.AreaHighlight-module__root___3ssLw {
+  border: 1px solid #333;
+  background-color: rgba(252, 232, 151, 1.0);
+  opacity: 1;
+  mix-blend-mode: multiply;
+}
+/*  imported from Highlight.module.css  */
+
+.Highlight-module__root___1gzqY {
+  position: absolute;
+}
+
+.Highlight-module__emoji___3JzKQ {
+  position: absolute;
+  color: black;
+  opacity: 1;
+  font-size: 28px;
+}
+
+.Highlight-module__parts___1vpYj {
+  opacity: 1;
+}
+
+.Highlight-module__part___1EGhE {
+  cursor: pointer;
+  position: absolute;
+  background: rgba(255, 226, 143, 1);
+  transition: background 0.3s;
+}
+
+.Highlight-module__popup___3StVT {
+  background-color: #3d464d;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  max-width: 300px;
+  max-height: 100px;
+  overflow-y: scroll;
+}
+
+.Highlight-module__scrolledTo___2FX5P .Highlight-module__part___1EGhE {
+  background: #ff4141;
+}
+/*  imported from MouseSelection.module.css  */
+
+.MouseSelection-module__root___1SAc0 {
+  position: absolute;
+  border: 1px dashed #333;
+  background: rgba(252, 232, 151, 1);
+  mix-blend-mode: multiply;
+}
+/* Internet Explorer support method */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .MouseSelection-module__root___1SAc0 {opacity: 0.5 }
+}
+
+/* Microsoft Edge Browser 12+ (All) - @supports method */
+@supports (-ms-ime-align:auto) {
+  .MouseSelection-module__root___1SAc0 {opacity: 0.5 }
+}
+/*  imported from PdfHighlighter.module.css  */
+
+.PdfHighlighter-module__root___3C_EQ {
+  position: absolute;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+}
+
+.PdfHighlighter-module__highlightLayer___3zw7I {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+}
+
+.PdfHighlighter-module__disableSelection___1g4tH {
+  user-select: none;
+  pointer-events: none;
+}
+/*  imported from Tip.module.css  */
+
+.Tip-module__compact___73wOe {
+  cursor: pointer;
+  background-color: #3d464d;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+.Tip-module__card___3l6mH {
+  padding: 10px;
+  background: #fff;
+  background-clip: padding-box;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(37, 40, 43, 0.2);
+}
+
+.Tip-module__card___3l6mH textarea {
+  font-size: 16px;
+  width: 200px;
+  height: 70px;
+}
+
+.Tip-module__card___3l6mH input[type="submit"] {
+  margin-top: 5px;
+  font-size: large;
+}
+/*  imported from TipContainer.module.css  */
+
+.TipContainer-module__root___2KUsz {
+  z-index: 6;
+  position: absolute;
+}
