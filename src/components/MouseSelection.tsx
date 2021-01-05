@@ -8,14 +8,14 @@ import styles from "../style/MouseSelection.module.css";
 import type { T_LTWH } from "../types.js";
 
 type Coords = {
-  x: number,
-  y: number
+  x: number;
+  y: number;
 };
 
 type State = {
-  locked: boolean,
-  start: ?Coords,
-  end: ?Coords
+  locked: boolean;
+  start?: Coords;
+  end?: Coords;
 };
 
 type Props = {
@@ -23,11 +23,11 @@ type Props = {
     startTarget: HTMLElement,
     boundingRect: T_LTWH,
     resetSelection: () => void
-  ) => void,
-  onDragStart: () => void,
-  onDragEnd: () => void,
-  shouldStart: (event: MouseEvent) => boolean,
-  onChange: (isVisible: boolean) => void
+  ) => void;
+  onDragStart: () => void;
+  onDragEnd: () => void;
+  shouldStart: (event: MouseEvent) => boolean;
+  onChange: (isVisible: boolean) => void;
 };
 
 class MouseSelection extends Component<Props, State> {
@@ -37,7 +37,7 @@ class MouseSelection extends Component<Props, State> {
     end: null
   };
 
-  root: ?HTMLElement;
+  root?: HTMLElement;
 
   reset = () => {
     const { onDragEnd } = this.props;
@@ -184,9 +184,7 @@ class MouseSelection extends Component<Props, State> {
     const { start, end } = this.state;
 
     return (
-      <div
-        ref={node => (this.root = node)}
-      >
+      <div ref={node => (this.root = node)}>
         {start && end ? (
           <div
             className={styles.root}

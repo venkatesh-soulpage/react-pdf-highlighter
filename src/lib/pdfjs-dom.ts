@@ -9,7 +9,7 @@ export const isHTMLElement = (elm: any) =>
 export const isHTMLCanvasElement = (elm: any) =>
   elm instanceof HTMLCanvasElement ||
   elm instanceof getWindow(elm).HTMLCanvasElement;
-export const asElement = (x: any): HTMLElement => (x: HTMLElement);
+export const asElement = (x: any): HTMLElement => x;
 
 export const getPageFromElement = (target: HTMLElement) => {
   const node = asElement(target.closest(".page"));
@@ -36,7 +36,7 @@ export const getPageFromRange = (range: Range) => {
 export const findOrCreateContainerLayer = (
   container: HTMLElement,
   className: string,
-  selector?: string,
+  selector?: string
 ) => {
   const doc = getDocument(container);
   let layer = container.querySelector(selector ? selector : `.${className}`);

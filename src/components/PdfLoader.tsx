@@ -26,16 +26,16 @@ export function setPdfWorker(workerSrcOrClass: any) {
 }
 
 type Props = {
-  url: string,
-  beforeLoad: React$Element<*>,
-  errorMessage?: React$Element<*>,
-  children: (pdfDocument: T_PDFJS_Document) => React$Element<*>,
-  onError?: (error: Error) => void
+  url: string;
+  beforeLoad: React$Element<>;
+  errorMessage?: React$Element<>;
+  children: (pdfDocument: T_PDFJS_Document) => React$Element<>;
+  onError?: (error: Error) => void;
 };
 
 type State = {
-  pdfDocument: ?T_PDFJS_Document,
-  error: ?Error
+  pdfDocument?: T_PDFJS_Document;
+  error?: Error;
 };
 
 class PdfLoader extends Component<Props, State> {

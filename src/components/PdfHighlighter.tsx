@@ -45,17 +45,17 @@ import type {
 type T_ViewportHighlight<T_HT> = { position: T_Position } & T_HT;
 
 type State<T_HT> = {
-  ghostHighlight: ?{
-    position: T_ScaledPosition
-  },
-  isCollapsed: boolean,
-  range: ?Range,
-  tip: ?{
-    highlight: T_ViewportHighlight<T_HT>,
-    callback: (highlight: T_ViewportHighlight<T_HT>) => React$Element<*>
-  },
-  isAreaSelectionInProgress: boolean,
-  scrolledToHighlightId: string
+  ghostHighlight?: {
+    position: T_ScaledPosition;
+  };
+  isCollapsed: boolean;
+  range?: Range;
+  tip?: {
+    highlight: T_ViewportHighlight<T_HT>;
+    callback: (highlight: T_ViewportHighlight<T_HT>) => React$Element<>;
+  };
+  isAreaSelectionInProgress: boolean;
+  scrolledToHighlightId: string;
 };
 
 type Props<T_HT> = {
@@ -64,30 +64,30 @@ type Props<T_HT> = {
     index: number,
     setTip: (
       highlight: T_ViewportHighlight<T_HT>,
-      callback: (highlight: T_ViewportHighlight<T_HT>) => React$Element<*>
+      callback: (highlight: T_ViewportHighlight<T_HT>) => React$Element<>
     ) => void,
     hideTip: () => void,
     viewportToScaled: (rect: T_LTWH) => T_Scaled,
     screenshot: (position: T_LTWH) => string,
     isScrolledTo: boolean
-  ) => React$Element<*>,
-  highlights: Array<T_HT>,
-  onScrollChange: () => void,
-  scrollRef: (scrollTo: (highlight: T_Highlight) => void) => void,
-  pdfDocument: T_PDFJS_Document,
-  pdfScaleValue: string,
+  ) => React$Element<>;
+  highlights: Array<T_HT>;
+  onScrollChange: () => void;
+  scrollRef: (scrollTo: (highlight: T_Highlight) => void) => void;
+  pdfDocument: T_PDFJS_Document;
+  pdfScaleValue: string;
   onSelectionFinished: (
     position: T_ScaledPosition,
-    content: { text?: string, image?: string },
+    content: { text?: string; image?: string },
     hideTipAndSelection: () => void,
     transformSelection: () => void
-  ) => ?React$Element<*>,
-  enableAreaSelection: (event: MouseEvent) => boolean
+  ) => ?React$Element<>;
+  enableAreaSelection: (event: MouseEvent) => boolean;
 };
 
 const EMPTY_ID = "empty-id";
 
-class PdfHighlighter<T_HT: T_Highlight> extends PureComponent<
+class PdfHighlighter<T_HT, T_Highlight> extends PureComponent<
   Props<T_HT>,
   State<T_HT>
 > {
@@ -111,7 +111,7 @@ class PdfHighlighter<T_HT: T_Highlight> extends PureComponent<
   viewer: T_PDFJS_Viewer;
 
   resizeObserver = null;
-  containerNode: ?HTMLDivElement = null;
+  containerNode?: HTMLDivElement = null;
   unsubscribe = () => {};
 
   constructor(props: Props<T_HT>) {
@@ -125,7 +125,7 @@ class PdfHighlighter<T_HT: T_Highlight> extends PureComponent<
     this.init();
   }
 
-  attachRef = (ref: ?HTMLDivElement) => {
+  attachRef = (ref?: HTMLDivElement) => {
     const { eventBus, resizeObserver: observer } = this;
     this.containerNode = ref;
     this.unsubscribe();
@@ -216,7 +216,7 @@ class PdfHighlighter<T_HT: T_Highlight> extends PureComponent<
       }, {});
   }
 
-  showTip(highlight: T_ViewportHighlight<T_HT>, content: React$Element<*>) {
+  showTip(highlight: T_ViewportHighlight<T_HT>, content: React$Element<>) {
     const {
       isCollapsed,
       ghostHighlight,
@@ -340,7 +340,7 @@ class PdfHighlighter<T_HT: T_Highlight> extends PureComponent<
     );
   };
 
-  renderTipAtPosition(position: T_Position, inner: ?React$Element<*>) {
+  renderTipAtPosition(position: T_Position, inner?: React$Element<>) {
     const { boundingRect, pageNumber } = position;
 
     const page = {
@@ -527,10 +527,7 @@ class PdfHighlighter<T_HT: T_Highlight> extends PureComponent<
   debouncedAfterSelection: () => void = debounce(this.afterSelection, 500);
 
   toggleTextSelection(flag: boolean) {
-    this.viewer.viewer.classList.toggle(
-      styles.disableSelection,
-      flag
-    );
+    this.viewer.viewer.classList.toggle(styles.disableSelection, flag);
   }
 
   handleScaleValue = () => {

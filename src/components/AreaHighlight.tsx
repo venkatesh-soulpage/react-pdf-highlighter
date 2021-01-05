@@ -8,10 +8,10 @@ import styles from "../style/AreaHighlight.module.css";
 
 import type { T_ViewportHighlight, T_LTWH } from "../types";
 
-type Props = {|
-  highlight: T_ViewportHighlight,
-  onChange: (rect: T_LTWH) => void
-|};
+type Props = {
+  highlight: T_ViewportHighlight;
+  onChange: (rect: T_LTWH) => void;
+};
 
 class AreaHighlight extends Component<Props> {
   render() {

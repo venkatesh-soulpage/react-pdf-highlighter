@@ -7,15 +7,15 @@ import type { T_LTWH } from "../types";
 import styles from "../style/TipContainer.module.css";
 
 type State = {
-  height: number,
-  width: number
+  height: number;
+  width: number;
 };
 
 type Props = {
-  children: ?React$Element<*>,
-  style: { top: number, left: number, bottom: number },
-  scrollTop: number,
-  pageBoundingRect: T_LTWH
+  children?: React$Element<>;
+  style: { top: number; left: number; bottom: number };
+  scrollTop: number;
+  pageBoundingRect: T_LTWH;
 };
 
 const clamp = (value, left, right) => Math.min(Math.max(value, left), right);

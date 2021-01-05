@@ -5,14 +5,14 @@ import React, { Component } from "react";
 import MouseMonitor from "./MouseMonitor";
 
 type Props = {
-  onMouseOver: (content: React$Element<*>) => void,
-  popupContent: React$Element<*>,
-  onMouseOut: () => void,
-  children: React$Element<*>
+  onMouseOver: (content: React$Element<>) => void;
+  popupContent: React$Element<>;
+  onMouseOut: () => void;
+  children: React$Element<>;
 };
 
 type State = {
-  mouseIn: boolean
+  mouseIn: boolean;
 };
 
 class Popup extends Component<Props, State> {
